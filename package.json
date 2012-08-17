@@ -19,6 +19,7 @@
     "type": "git",
     "url": "git://github.com/ryankask/tritium.git"
   },
+  "main": "./tritium",
   "devDependencies": {
     "mocha": "*"
   },
