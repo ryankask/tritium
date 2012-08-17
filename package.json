@@ -1,0 +1,35 @@
+{
+  "name": "tritium",
+  "version": "0.1.0-alpha",
+  "description": "An implementation of a ternary search tree.",
+  "keywords": [
+    "ternary",
+    "search",
+    "tree",
+    "autocomplete",
+    "completion"
+  ],
+  "homepage": "https://github.com/ryankask/tritium",
+  "author": {
+    "name": "Ryan Kaskel",
+    "email": "dev@ryankaskel.com",
+    "url": "https://ryankaskel.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryankask/tritium.git"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "bugs": {
+    "email": "dev@ryankaskel.com",
+    "url": "https://github.com/ryankask/tritium/issues"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
