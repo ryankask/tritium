@@ -12,11 +12,11 @@ Usage
     > tree.add('airport');
     > tree.add('airside');
     > tree.add('apple');
-    > tree.exists('air');
+    > tree.has('air');
     true
-    > tree.exists('apple');
+    > tree.has('apple');
     true
-    > tree.exists('apples');
+    > tree.has('apples');
     false
     > tree.prefixSearch('airp');
     [ 'airplane', 'airport' ]

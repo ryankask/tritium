@@ -62,29 +62,29 @@ suite('TernarySearchTree', function() {
     });
   });
 
-  suite('#exists()', function() {
+  suite('#has()', function() {
     test('returns false on an empty tree', function() {
-      assert.equal(t.exists('my'), false);
+      assert.equal(t.has('my'), false);
     });
 
     test('returns false on an empty query', function() {
       t.add('foo');
-      assert.equal(t.exists(''), false);
+      assert.equal(t.has(''), false);
     });
 
     test('returns false when not found', function() {
       t.add('foo');
-      assert.equal(t.exists('bar'), false);
+      assert.equal(t.has('bar'), false);
     });
 
     test('returns true when found', function() {
       t.add('foo');
-      assert.equal(t.exists('foo'), true);
+      assert.equal(t.has('foo'), true);
     });
 
     test('returns true when prefix found', function() {
       t.add('foo');
-      assert.equal(t.exists('fo'), true);
+      assert.equal(t.has('fo'), true);
     });
   });
 

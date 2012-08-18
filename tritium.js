@@ -114,7 +114,7 @@ var ternarySearchTree = function() {
     add: function(word) {
       insert(root, word);
     },
-    exists: function(word) {
+    has: function(word) {
       return search(root, word) ? true : false;
     },
     prefixSearch: function(word, limit) {
