@@ -112,7 +112,6 @@ var ternarySearchTree = function() {
       return numNodes;
     },
     add: function(word) {
-      // root isn't really getting passed by reference here
       insert(root, word);
     },
     exists: function(word) {
