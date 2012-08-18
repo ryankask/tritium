@@ -120,10 +120,8 @@ var ternarySearchTree = function() {
     prefixSearch: function(word, limit) {
       return childWords(root, word, limit);
     },
-    traverse: function(visit) {
-      inOrderTraversal(root, function(node, data) {
-        visit(node, data);
-      });
+    traverse: function(visit, data) {
+      inOrderTraversal(root, visit, data);
     }
   }
 };
