@@ -95,10 +95,10 @@ var ternarySearchTree = function() {
 
     if (!node || data === null) return;
 
-    inOrderTraversal(node.left, visit, data);
+    if (node.left) inOrderTraversal(node.left, visit, data);
     modifiedData = visit(node, data);
-    inOrderTraversal(node.middle, visit, modifiedData);
-    inOrderTraversal(node.right, visit, data);
+    if (node.middle) inOrderTraversal(node.middle, visit, modifiedData);
+    if (node.right) inOrderTraversal(node.right, visit, data);
   }
 
   return {
