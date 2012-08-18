@@ -7,9 +7,7 @@ var ternarySearchTree = function() {
     var firstChar = chars.charAt(0),
         node;
 
-    if (!firstChar) {
-      return null;
-    }
+    if (!firstChar) return null;
 
     if (!node) {
       node = {
@@ -22,9 +20,7 @@ var ternarySearchTree = function() {
       numNodes += 1;
     }
 
-    if (!root) {
-      root = node;
-    }
+    if (!root) root = node;
 
     if (firstChar < node.character) {
       node.left = insert(node.left, chars);
@@ -46,9 +42,7 @@ var ternarySearchTree = function() {
     var firstChar = chars.charAt(0),
         rest;
 
-    if (!node || !firstChar) {
-      return null;
-    }
+    if (!node || !firstChar) return null;
 
     if (firstChar < node.character) {
       return search(node.left, chars);
@@ -74,29 +68,21 @@ var ternarySearchTree = function() {
           prefix: prefix
         };
 
-    if (!node || !prefix) {
-      return foundWords;
-    }
+    if (!node || !prefix) return foundWords;
 
     parentNode = search(node, prefix);
 
-    if (!parentNode) {
-      return foundWords;
-    }
+    if (!parentNode) return foundWords;
 
     inOrderTraversal(parentNode.middle, function(node, data) {
-      if (data.foundWords.length >= limit) {
-        return null;
-      }
+      if (data.foundWords.length >= limit) return null;
 
       data = {
         foundWords: data.foundWords,
         prefix: data.prefix + node.character
       };
 
-      if (node.word) {
-        data.foundWords.push(data.prefix);
-      }
+      if (node.word) data.foundWords.push(data.prefix);
 
       return data;
     }, traversalData);
@@ -107,9 +93,7 @@ var ternarySearchTree = function() {
   function inOrderTraversal(node, visit, data) {
     var modifiedData;
 
-    if (data === null) {
-      return;
-    }
+    if (data === null) return;
 
     if (node) {
       inOrderTraversal(node.left, visit, data);
