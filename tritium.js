@@ -114,11 +114,11 @@ var ternarySearchTree = function() {
     add: function(word) {
       insert(root, word);
     },
-    has: function(word) {
-      return search(root, word) ? true : false;
+    has: function(prefix) {
+      return search(root, prefix) ? true : false;
     },
-    prefixSearch: function(word, limit) {
-      return childWords(root, word, limit);
+    prefixSearch: function(prefix, limit) {
+      return childWords(root, prefix, limit);
     },
     traverse: function(visit, data) {
       depthFirstTraversal(root, visit, data);
