@@ -74,7 +74,7 @@ var ternarySearchTree = function() {
 
     if (!parentNode) return foundWords;
 
-    inOrderTraversal(parentNode.middle, function(node, data) {
+    depthFirstTraversal(parentNode.middle, function(node, data) {
       if (data.foundWords.length >= limit) return null;
 
       data = {
@@ -90,15 +90,15 @@ var ternarySearchTree = function() {
     return foundWords;
   }
 
-  function inOrderTraversal(node, visit, data) {
+  function depthFirstTraversal(node, visit, data) {
     var modifiedData;
 
     if (!node || data === null) return;
 
-    if (node.left) inOrderTraversal(node.left, visit, data);
+    if (node.left) depthFirstTraversal(node.left, visit, data);
     modifiedData = visit(node, data);
-    if (node.middle) inOrderTraversal(node.middle, visit, modifiedData);
-    if (node.right) inOrderTraversal(node.right, visit, data);
+    if (node.middle) depthFirstTraversal(node.middle, visit, modifiedData);
+    if (node.right) depthFirstTraversal(node.right, visit, data);
   }
 
   return {
@@ -121,7 +121,7 @@ var ternarySearchTree = function() {
       return childWords(root, word, limit);
     },
     traverse: function(visit, data) {
-      inOrderTraversal(root, visit, data);
+      depthFirstTraversal(root, visit, data);
     }
   }
 };
