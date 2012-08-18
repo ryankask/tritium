@@ -107,6 +107,12 @@ var ternarySearchTree = function() {
     getRoot: function() {
       return root;
     },
+    wordCount: function() {
+      return numWords;
+    },
+    nodeCount: function() {
+      return numNodes;
+    },
     add: function(word) {
       // root isn't really getting passed by reference here
       insert(root, word);
@@ -116,12 +122,6 @@ var ternarySearchTree = function() {
     },
     prefixSearch: function(word, limit) {
       return childWords(root, word, limit);
-    },
-    wordCount: function() {
-      return numWords;
-    },
-    nodeCount: function() {
-      return numNodes;
     },
     printTree: function(printer) {
       printer = printer || console.log;
