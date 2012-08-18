@@ -127,6 +127,30 @@ suite('TernarySearchTree', function() {
     });
   });
 
+  suite('#traverse()', function() {
+    test('visits all nodes', function() {
+      var visitedCharacters = [],
+          expectedCharacters,
+          i;
+
+      t.add('bob');
+      t.add('bit');
+      t.add('bar');
+
+      expectedCharacters = ['b', 'a', 'r', 'i', 't', 'o', 'b'];
+
+      t.traverse(function(node) {
+        visitedCharacters.push(node.character);
+      });
+
+      assert.equal(visitedCharacters.length, expectedCharacters.length);
+
+      for (i = 0; i < expectedCharacters.length; i++) {
+        assert.equal(visitedCharacters[i], expectedCharacters[i]);
+      }
+    });
+  });
+
   suite('miscellaneous methods', function() {
     test('correct number of words counted', function() {
       t.add('foo');
@@ -138,15 +162,6 @@ suite('TernarySearchTree', function() {
       t.add('most');
       t.add('more');
       assert.equal(t.nodeCount(), 6);
-    });
-
-    test('prints tree', function() {
-      t.add('rope');
-      t.add('rower');
-
-      t.printTree(function(character) {
-        // do nothing
-      });
     });
   });
 });

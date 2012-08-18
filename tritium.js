@@ -93,14 +93,12 @@ var ternarySearchTree = function() {
   function inOrderTraversal(node, visit, data) {
     var modifiedData;
 
-    if (data === null) return;
+    if (!node || data === null) return;
 
-    if (node) {
-      inOrderTraversal(node.left, visit, data);
-      modifiedData = visit(node, data);
-      inOrderTraversal(node.middle, visit, modifiedData);
-      inOrderTraversal(node.right, visit, data);
-    }
+    inOrderTraversal(node.left, visit, data);
+    modifiedData = visit(node, data);
+    inOrderTraversal(node.middle, visit, modifiedData);
+    inOrderTraversal(node.right, visit, data);
   }
 
   return {
@@ -123,11 +121,9 @@ var ternarySearchTree = function() {
     prefixSearch: function(word, limit) {
       return childWords(root, word, limit);
     },
-    printTree: function(printer) {
-      printer = printer || console.log;
-
-      inOrderTraversal(root, function(node) {
-        printer(node.character);
+    traverse: function(visit) {
+      inOrderTraversal(root, function(node, data) {
+        visit(node, data);
       });
     }
   }
