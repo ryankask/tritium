@@ -1,6 +1,6 @@
 {
   "name": "tritium",
-  "version": "0.1.0-alpha",
+  "version": "0.2.0-alpha",
   "description": "An implementation of a ternary search tree.",
   "keywords": [
     "ternary",
