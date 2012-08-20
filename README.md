@@ -52,7 +52,7 @@ Returns the number of nodes in the tree.
 
 Adds a new word to the tree.
 
-### .has(prefix, [, isWord])
+### .has(prefix [, isWord])
 
 Tests whether a given `prefix` is in the tree. If `isWord` is true,
 the prefix must be a word (i.e. inserted into the tree using the `add`
