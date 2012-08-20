@@ -114,8 +114,11 @@ var ternarySearchTree = function() {
     add: function(word) {
       insert(root, word);
     },
-    has: function(prefix) {
-      return search(root, prefix) ? true : false;
+    has: function(prefix, isWord) {
+      var foundNode = search(root, prefix);
+      return foundNode
+        ? isWord ? foundNode.word : true
+        : false;
     },
     prefixSearch: function(prefix, limit) {
       return childWords(root, prefix, limit);

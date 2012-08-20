@@ -86,6 +86,16 @@ suite('TernarySearchTree', function() {
       t.add('foo');
       assert.equal(t.has('fo'), true);
     });
+
+    test('returns false when isWord is set and the prefix isn\'t a word', function() {
+      t.add('foo');
+      assert.equal(t.has('fo', true), false);
+    });
+
+    test('returns true when isWord is set and the prefix is a word ', function() {
+      t.add('foo');
+      assert.equal(t.has('foo', true), true);
+    });
   });
 
   suite('#prefixSearch()', function() {
